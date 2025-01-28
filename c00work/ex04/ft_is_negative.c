@@ -12,9 +12,7 @@
 
 #include <unistd.h>
 
-void	ft_is_negative(int n);
-
-int	main(void)
+void	ft_is_negative(int n)
 {	
 	char	x;
 	int		n;
