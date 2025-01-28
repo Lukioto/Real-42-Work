@@ -18,7 +18,7 @@ int main()
 {
     char ch;
     
-    for (ch = 'z'; ch >= 'a'; ch--)
+    for(ch = 'z'; ch >= 'a'; ch--)
     {
 	write(1, &ch, 1);
     }
