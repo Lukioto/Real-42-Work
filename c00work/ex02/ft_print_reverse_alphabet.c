@@ -22,5 +22,4 @@ void	ft_print_reverse_alphabet(void)
 		write(1, &ch, 1);
 		ch--;
 	}	
-	return (0);
 }

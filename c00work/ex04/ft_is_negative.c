@@ -15,9 +15,7 @@
 void	ft_is_negative(int n)
 {	
 	char	x;
-	int		n;
 
-	n = 1;
 	if (n < 0)
 	{
 		x = 'N';
