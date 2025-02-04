@@ -6,12 +6,11 @@
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:30:44 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/03 14:25:45 by lgotoh           ###   ########.fr       */
+/*   Updated: 2025/02/04 14:27:47 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <string.h>
 
 void	ft_putstr(char *str)
 {
