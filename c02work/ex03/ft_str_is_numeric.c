@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 11:41:03 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/05 14:08:22 by lgotoh           ###   ########.fr       */
+/*   Created: 2025/02/06 15:19:25 by lgotoh            #+#    #+#             */
+/*   Updated: 2025/02/06 15:51:08 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strncpy(char	*dest, char *src, unsigned int n)
+int	ft_str_is_numeric(char *str)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (*src != '\0' && count < n)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		*dest = *src;
-		*dest++;
-		*src++;
-		count++;
+		if (str[i] < '0' || str[i] > '9')
+		{
+			return (0);
+		}
+		i++;
 	}
+	return (1);
 }
 
 /*int main()
 {
-	char text1[] = "This will be replaced";
-	char text2[] = "12345678- Only first 8 characters will copy";
-	unsigned int charlimit = 8;
-
-	printf("%s", text1);
-	printf("\n%s\n", text2);
-	ft_strcpy(text1, text2, charlimit);
-	printf("\n%s", text1);
-	printf("\n%s", text2);
+	printf("%d", ft_str_is_numeric("12345678"));;
+	printf("\n%d", ft_str_is_numeric("abcdefg"));
+	printf("\n%d", ft_str_is_numeric(""));
 }*/
