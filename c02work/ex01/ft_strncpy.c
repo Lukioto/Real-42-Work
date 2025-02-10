@@ -6,25 +6,24 @@
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 11:41:03 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/05 14:08:22 by lgotoh           ###   ########.fr       */
+/*   Updated: 2025/02/10 16:59:25 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
 char	*ft_strncpy(char	*dest, char *src, unsigned int n)
 {
-	int	count;
+	unsigned int	i;
 
-	count = 0;
-	while (*src != '\0' && count < n)
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		*dest = *src;
-		*dest++;
-		*src++;
-		count++;
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int main()
@@ -35,7 +34,7 @@ char	*ft_strncpy(char	*dest, char *src, unsigned int n)
 
 	printf("%s", text1);
 	printf("\n%s\n", text2);
-	ft_strcpy(text1, text2, charlimit);
+	ft_strncpy(text1, text2, charlimit);
 	printf("\n%s", text1);
 	printf("\n%s", text2);
 }*/

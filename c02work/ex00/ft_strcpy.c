@@ -6,7 +6,7 @@
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:35:14 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/05 14:11:36 by lgotoh           ###   ########.fr       */
+/*   Updated: 2025/02/10 16:50:05 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 char	*ft_strcpy(char	*dest, char *src)
 {
-	while (*src != '\0')
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
-		*dest = *src;
-		*dest++;
-		*src++;
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int main()
