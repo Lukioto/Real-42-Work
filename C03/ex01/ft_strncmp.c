@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 11:41:03 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/10 16:59:25 by lgotoh           ###   ########.fr       */
+/*   Created: 2025/02/11 16:08:00 by lgotoh            #+#    #+#             */
+/*   Updated: 2025/02/11 16:19:33 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strncpy(char	*dest, char *src, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while ((s1[i] != '\0' && i < n) || (s2[i] != '\0' && i < n))
 	{
-		dest[i] = src[i];
+		if (s1[i] < s2[i])
+		{
+			return (-1);
+		}
+		else if (s1[i] > s2[i])
+		{
+			return (1);
+		}
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 
-/*int main()
+/*int   main()
 {
-	char text1[] = "This will be replaced";
-	char text2[] = "12345678- Only first 8 characters will copy";
-	unsigned int charlimit = 8;
-
-	printf("%s", text1);
-	printf("\n%s\n", text2);
-	ft_strncpy(text1, text2, charlimit);
-	printf("\n%s", text1);
-	printf("\n%s", text2);
+        printf("%d\n", ft_strncmp("same", "samx", 3));
+        printf("%d\n", ft_strncmp("zebra", "alphabet", 5));
+        printf("%d\n", ft_strncmp("alphabet", "zebra", 5));
+        return (0);
 }*/
