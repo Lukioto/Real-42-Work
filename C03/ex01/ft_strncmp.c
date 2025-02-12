@@ -6,7 +6,7 @@
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:00 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/11 16:19:33 by lgotoh           ###   ########.fr       */
+/*   Updated: 2025/02/12 13:42:56 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while ((s1[i] != '\0' && i < n) || (s2[i] != '\0' && i < n))
