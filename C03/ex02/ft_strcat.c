@@ -14,15 +14,19 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	while (*dest != '\0')
+	int	i;
+	
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		dest++;
+		i++;
 	}
 	while (*src != '\0')
 	{
-		*dest++ = *src++;
+		dest[i] = *src++;
+		i++;
 	}
-	*dest = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 
