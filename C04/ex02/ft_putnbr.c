@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgotoh <lgotoh@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 13:55:01 by lgotoh            #+#    #+#             */
-/*   Updated: 2025/02/15 12:01:00 by lgotoh           ###   ########.fr       */
+/*   Created: 2025/02/13 14:21:42 by lgotoh            #+#    #+#             */
+/*   Updated: 2025/02/13 15:17:55 by lgotoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_putchar(char c)
 {
-	int	i;
-	int	x;
-
-	i = 0;
-	x = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[x] != '\0')
-	{
-		dest[i] = src[x];
-		i++;
-		x++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write(1, &c, 1);
 }
 
-/*int	main()
+void	ft_putnbr(int nb)
 {
-	char	str1[10] = "star";
-	char	str2[] = " jump";
-	ft_strcat(str1, str2);
-	printf("%s", str1);
-	return (0);
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{	
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+	}
+	nb = nb % 10 + '0';
+	write(1, &nb, 1);
+}
+
+/*int main()
+{
+	ft_putnbr(42);
 }*/
